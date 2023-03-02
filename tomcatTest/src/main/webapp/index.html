@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script type="text/javascript">
+        $(function () {
+            $("#ajaxBtn").click(function () {
+                $.ajax({
+                    url:"http://localhost:8080/tomcatTest_war_exploded/ajaxServlet",
+                    error: function () {
+                        alert("请求失败");
+                    },
+                    success: function () {
+                        alert("请求成功");
+                    },
+                    type: "POST", // 请求的方式
+                    dataType: "json", // 返回的数据类型为 json 对象
+                    data: { // 请求的参数
+                        action: "jqueryAjax",
+                        a: 12,
+                        date: new Date()
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<div>
+    <button id="ajaxBtn">$.ajax 请求</button>
+    <button id="getBtn">$.get 请求</button>
+    <button id="postBtn">$.post 请求</button>
+    <button id="getJsonBtn">$.getJSON 请求</button>
+</div>
+<br/><br/>
+<form id="form01" >
+    用户名：<input name="username" type="text" /><br/>
+    密码：<input name="password" type="password" /><br/>
+    下拉单选：<select name="single">
+    <option value="Single">Single</option>
+    <option value="Single2">Single2</option>
+</select><br/>
+    下拉多选：
+    <select name="multiple" multiple="multiple">
+        <option selected="selected" value="Multiple">Multiple</option>
+        <option value="Multiple2">Multiple2</option>
+        <option selected="selected" value="Multiple3">Multiple3</option>
+    </select><br/>
+    复选：
+    <input type="checkbox" name="check" value="check1"/> check1
+    <input type="checkbox" name="check" value="check2" checked="checked"/>
+    check2<br/>
+    单选：
+    <input type="radio" name="radio" value="radio1" checked="checked"/> radio1
+    <input type="radio" name="radio" value="radio2"/> radio2<br/>
+    <input id="submit" type="submit" />
+</form>
+</body>
+</html>

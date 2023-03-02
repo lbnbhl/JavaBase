@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<books >
+    <book id="sd100">
+        <name>xmltest</name>
+        <autor>wwl</autor>
+        <price>100$</price>
+    </book>
+    <book id="sd101">
+        <name>hhh</name>
+        <autor>wwl</autor>
+        <price>10$</price>
+    </book>
+    <book id="sd103">
+        <name>hello</name>
+        <autor>wwl</autor>
+        <price>99$</price>
+    </book>
+</books>
